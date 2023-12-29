@@ -6,6 +6,8 @@
 ln -sf /usr/share/zoneinfo/Asia/Kuching /etc/localtime
 hwclock --systohc
 
+systemctl enable NetworkManager
+
 echo "en_US.UTF-8" >> /etc/locale.gen
 locale-gen
 
