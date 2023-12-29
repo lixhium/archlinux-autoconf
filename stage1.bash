@@ -28,6 +28,10 @@ passwd adji
 
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
+echo "[multilib]" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+pacman -Syyu
+
 grub-install --target=x86-64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 
 grub-mkconfig -o /boot/grub/grub.cfg
